@@ -15,6 +15,20 @@ class Dog:
         self.name = name
         self.breed = breed
 
+
+    @property
+    def name(self):
+        """The name property"""
+        return self._name    
+    
+    @name.setter
+    def name(self, name):
+      """Name must be a string between 1 and 25 characters in length"""
+    if isinstance(name, str) and 1 <= len(name) <= 25:
+        self._name = name
+    else:
+        raise ValueError("Name must be string between 1 and 25 characters." )
+
     def get_name(self):
         return self._name
 
